@@ -1,2 +1,2 @@
 # Start nZDEDb
-tail ~/test.log
+tail /install_nZEDb.sh
