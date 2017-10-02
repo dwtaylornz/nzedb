@@ -1,25 +1,30 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER dwtaylornz@gmail.com
 
 # Install Pre-reqs
 RUN apt-get update && apt-get install -y \
-  python3-setuptools \
-  python3-pip \ 
-  git \
-  p7zip-full \
-  par2
-  
-# Setup python 
-RUN python3 -m easy_install pip && easy_install3 cymysql
+  apache2 apache2-utils
 
-# Setup Apache
-RUN apt-get install -y apache2
+RUN systemctl enable apache2
+RUN chown www-data /var/www/html/ -R
 
-# Install PHP
-RUN apt-get install -y php5 php5-dev php-pear php5-gd php5-mysqlnd php5-curl
+# Install PHP 
+RUN apt-get –f install -y php7.0-fpm php7.0-mysql php7.0-common php7.0-gd php7.0-json php7.0-cli php7.0-curl libapache2-mod-php7.0
+RUN a2enmod php7.0
+RUN systemctl restart apache2
+RUN apt-get –f install
 
-# Install unrar / ffmpeg / mediainfo / lame
-RUN apt-get install -y software-properties-common unrar python-software-properties lame mediainfo
+# Install Tools
+RUN apt-get install -y time unrar-free p7zip-full mediainfo lame ffmpeg libav-tools
+
+# Install unrar
+RUN mkdir -p ~/new_unrar && cd ~/new_unrar
+RUN wget http://www.rarlab.com/rar/rarlinux-x64-5.5.0.tar.gz
+RUN tar -xzf rarlinux*.tar.gz
+RUN mv /usr/bin/unrar /usr/bin/unrar4
+RUN mv rar/unrar /usr/bin/unrar
+RUN chmod 755 /usr/bin/unrar
+RUN cd ~/ && rm -rf ~/new_unrar
 
 # Add NVR Start-up
 ADD start_nZEDb.sh /
