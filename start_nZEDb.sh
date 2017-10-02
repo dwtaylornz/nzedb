@@ -1,2 +1,2 @@
 # Start nZDEDb
-tail /install_nZEDb.sh
+tail -F /install_nZEDb.sh
