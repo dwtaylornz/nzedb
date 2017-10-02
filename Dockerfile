@@ -5,7 +5,9 @@ MAINTAINER dwtaylornz@gmail.com
 RUN apt-get update && apt-get install -y \
   python3-setuptools \
   python3-pip \ 
-  git
+  git \
+  p7zip-full \
+  par2
   
 # Setup python 
 RUN python3 -m easy_install pip && easy_install3 cymysql
