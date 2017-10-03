@@ -18,7 +18,7 @@ RUN python3 -m easy_install pip && easy_install3 cymysql
 RUN apt-get install -y apache2
 
 # Install PHP
-RUN apt-get install -y php5 php5-dev php-pear php5-gd php5-mysqlnd php5-curl
+RUN apt-get install -y php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
 
 # Install unrar / ffmpeg / mediainfo / lame
 RUN apt-get install -y software-properties-common unrar python-software-properties lame mediainfo
