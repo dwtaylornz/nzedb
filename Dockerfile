@@ -1,10 +1,14 @@
 FROM ubuntu:14.04
 MAINTAINER dwtaylornz@gmail.com
 
+# Add Repo
+RUN add-apt-repository ppa:ondrej/php5-5.6
+
 # Install Pre-reqs
 RUN apt-get update && apt-get install -y \
   python3-setuptools \
   python3-pip \ 
+  software-properties-common \
   git
   
 # Setup python 
