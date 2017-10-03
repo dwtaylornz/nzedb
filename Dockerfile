@@ -11,7 +11,7 @@ RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 # Add Files
 ADD php-cli.ini /etc/php/7.0/cli/
 ADD php-web.ini /etc/php/7.0/apache2/
-ADD my.cnf /etc/mysql
+ADD my.cnf /etc/mysql/
 ADD apache2.conf /etc/apache2/
 ADD nZEDb.conf /etc/apache2/sites-available/
 
@@ -20,7 +20,7 @@ ADD start_nZEDb.sh /
 
 # Install NVR
 ADD install_nZEDb.sh /
-# RUN bash /install_nZEDb.sh
+RUN bash /install_nZEDb.sh
 
 # Volumes
 #VOLUME /var/lib/unifi-video  
