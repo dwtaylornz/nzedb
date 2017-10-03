@@ -5,7 +5,7 @@ MAINTAINER dwtaylornz@gmail.com
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y software-properties-common python-software-properties git unrar wget p7zip-full
 RUN add-apt-repository -y ppa:ondrej/php
-RUN apt-get install -y php-pear php-imagick php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml
+# RUN apt-get install -y php-pear php-imagick php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml
 RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 
 # Add Files
