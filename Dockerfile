@@ -20,7 +20,7 @@ ADD start_nZEDb.sh /
 
 # Install nZEDb
 ADD install_nZEDb.sh /
-RUN bash /install_nZEDb.sh
+# RUN bash /install_nZEDb.sh
 
 # Volumes
 #VOLUME /var/lib/unifi-video  
