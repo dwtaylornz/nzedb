@@ -15,10 +15,10 @@ ADD my.cnf /etc/mysql/
 ADD apache2.conf /etc/apache2/
 ADD nZEDb.conf /etc/apache2/sites-available/
 
-# Add NVR Start-up
+# Add nZEDb Start-up
 ADD start_nZEDb.sh /
 
-# Install NVR
+# Install nZEDb
 ADD install_nZEDb.sh /
 RUN bash /install_nZEDb.sh
 
@@ -28,5 +28,5 @@ RUN bash /install_nZEDb.sh
 # Ports
 EXPOSE 80
 
-# start NVR
+# start nZEDb
 CMD ["sh","/start_nZEDb.sh"]
