@@ -2,26 +2,20 @@ FROM ubuntu:14.04
 MAINTAINER dwtaylornz@gmail.com
 
 # Add Repo
-#RUN add-apt-repository ppa:ondrej/php5-5.6
+RUN add-apt-repository -y ppa:ondrej/php
 
 # Install Pre-reqs
-#RUN apt-get update && apt-get install -y \
-#  python3-setuptools \
-#  python3-pip \ 
-#  software-properties-common \
-#  git
-  
-# Setup python 
-#RUN python3 -m easy_install pip && easy_install3 cymysql
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y software-properties-common python-software-properties git unrar wget p7zip-full
+RUN apt-get install -y php-pear php-imagick php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml
+RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 
-# Setup Apache
-#RUN apt-get install -y apache2
-
-# Install PHP
-#RUN apt-get install -y php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
-
-# Install unrar / ffmpeg / mediainfo / lame
-#RUN apt-get install -y software-properties-common unrar python-software-properties lame mediainfo
+# Add Files
+ADD php-cli.ini /etc/php/7.0/cli/
+ADD php-web.ini /etc/php/7.0/apache2/
+ADD my.cnf /etc/mysql
+ADD apache2.conf /etc/apache2/
+ADD nZEDb.conf /etc/apache2/sites-available/
 
 # Add NVR Start-up
 ADD start_nZEDb.sh /
