@@ -1,3 +1,4 @@
+# Set permissions 
 newgrp www-data
 cd /var/www/
 mkdir -p /var/www
@@ -14,6 +15,7 @@ git clone https://github.com/nZEDb/nZEDb.git
 cd /var/www/nZEDb
 composer install --prefer-source
 
+# Re-apply permissions
 sudo chmod -R 755 /var/www/nZEDb/app/libraries
 sudo chmod -R 755 /var/www/nZEDb/libraries
 sudo chmod -R 777 /var/www/nZEDb/resources
