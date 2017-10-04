@@ -13,6 +13,8 @@ RUN apt-get install -y --force-yes php-pear php-imagick php7.0 php7.0-cli php7.0
 #sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $PASSWORD"
 RUN apt-get install -y unrar wget p7zip-full
 RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
+RUN apt-get install -y apache2 libapache2-mod-php7.0
+
 
 # Add nZEDb Start-up
 ADD start_nZEDb.sh /
