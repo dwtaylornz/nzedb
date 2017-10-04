@@ -17,7 +17,9 @@ RUN apt-get install -y apache2 libapache2-mod-php7.0
 
 # Add steps
 ADD install_Step11_nZEDb.sh / 
+RUN chmod +x /install_Step11_nZEDb.sh 
 RUN /install_Step11_nZEDb.sh 
+
 ADD install_Step10.sh / 
 
 # Add nZEDb Start-up
