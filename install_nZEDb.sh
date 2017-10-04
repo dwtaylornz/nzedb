@@ -1,10 +1,6 @@
 # Install nZEDb.sh
 
-# Enable nZEDb website 
-sudo a2dissite 000-default
-sudo a2ensite nZEDb.conf
-sudo a2enmod rewrite
-sudo service apache2 restart
+
 
 # Install unrar
 mkdir -p ~/new_unrar && cd ~/new_unrar
@@ -33,6 +29,12 @@ cd simple_php_yenc_decode/
 sh ubuntu.sh
 cd ~/
 rm -rf simple_php_yenc_decode/
+
+# Enable nZEDb website 
+sudo a2dissite 000-default
+sudo a2ensite nZEDb.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
 
 # Step 11 Acquiring nZEDb
 newgrp www-data
