@@ -1,7 +1,5 @@
 # Install nZEDb.sh
 
-
-
 # Install unrar
 mkdir -p ~/new_unrar && cd ~/new_unrar
 wget http://www.rarlab.com/rar/rarlinux-x64-5.2.1.tar.gz
