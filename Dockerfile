@@ -14,19 +14,19 @@ RUN apt-get install -y --force-yes php-pear php-imagick php7.0 php7.0-cli php7.0
 RUN apt-get install -y unrar wget p7zip-full
 RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 
-# Add Files
-ADD php-cli.ini /etc/php/7.0/cli/
-ADD php-web.ini /etc/php/7.0/apache2/
-ADD my.cnf /etc/mysql/
-ADD apache2.conf /etc/apache2/
-ADD nZEDb.conf /etc/apache2/sites-available/
-
 # Add nZEDb Start-up
 ADD start_nZEDb.sh /
 
 # Install nZEDb
 ADD install_nZEDb.sh /
 # RUN bash /install_nZEDb.sh
+
+# Add Files
+ADD php-cli.ini /etc/php/7.0/cli/
+ADD php-web.ini /etc/php/7.0/apache2/
+ADD my.cnf /etc/mysql/
+ADD apache2.conf /etc/apache2/
+ADD nZEDb.conf /etc/apache2/sites-available/
 
 # Volumes
 #VOLUME /var/lib/unifi-video  
