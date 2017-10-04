@@ -16,6 +16,7 @@ RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 
 # Add nZEDb Start-up
 ADD start_nZEDb.sh /
+RUN chmod +x /start_nZEDb.sh
 
 # Install nZEDb
 ADD install_nZEDb.sh /
