@@ -30,8 +30,8 @@ ADD install_nZEDb.sh /
 # RUN bash /install_nZEDb.sh
 
 # Add Files
-ADD php-cli.ini /etc/php/7.0/cli/
-ADD php-web.ini /etc/php/7.0/apache2/
+ADD php-cli.ini /etc/php/7.0/cli/php.ini
+ADD php-web.ini /etc/php/7.0/apache2/php.ini
 ADD my.cnf /etc/mysql/
 ADD apache2.conf /etc/apache2/
 ADD nZEDb.conf /etc/apache2/sites-available/
