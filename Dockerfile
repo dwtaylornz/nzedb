@@ -16,11 +16,10 @@ RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 RUN apt-get install -y apache2 libapache2-mod-php7.0
 
 # Add steps
-ADD install_Step11_nZEDb.sh / 
-RUN chmod +x /install_Step11_nZEDb.sh 
-RUN /install_Step11_nZEDb.sh 
-
 ADD install_Step10.sh / 
+
+ADD install_Step11_nZEDb.sh / 
+RUN bash /install_Step11_nZEDb.sh 
 
 # Add nZEDb Start-up
 ADD start_nZEDb.sh /
