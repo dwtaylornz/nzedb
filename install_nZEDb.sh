@@ -15,10 +15,7 @@ wget http://mediaarea.net/download/binary/mediainfo/0.7.99/mediainfo_0.7.99-1_am
 sudo dpkg -i libzen0_0.4.35-1_amd64.xUbuntu_14.10.deb
 sudo dpkg -i libmediainfo0_0.7.94-1_amd64.xUbuntu_14.10.deb
 sudo dpkg -i mediainfo_0.7.99-1_amd64.xUbuntu_14.04.deb
-sudo apt-get install libzen0
-sudo apt-get install lame
-sudo apt-get install libav-tools
-sudo apt-get install -f 
+sudo apt-get install -y libzen0 lame libav-tools
 
 # Install php_yenc_decode
 cd ~/
