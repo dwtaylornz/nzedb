@@ -25,12 +25,6 @@ sh ubuntu.sh
 cd ~/
 rm -rf simple_php_yenc_decode/
 
-# Enable nZEDb website 
-sudo a2dissite 000-default
-sudo a2ensite nZEDb.conf
-sudo a2enmod rewrite
-sudo service apache2 restart
-
 # Step 11 Acquiring nZEDb
 newgrp www-data
 cd /var/www/
@@ -52,3 +46,9 @@ sudo chmod -R 755 /var/www/nZEDb/app/libraries
 sudo chmod -R 755 /var/www/nZEDb/libraries
 sudo chmod -R 777 /var/www/nZEDb/resources
 sudo chmod -R 777 /var/www/nZEDb/www
+
+# Enable nZEDb website 
+sudo a2dissite 000-default
+sudo a2ensite nZEDb.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
