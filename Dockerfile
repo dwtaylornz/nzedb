@@ -18,6 +18,8 @@ RUN apt-get install -y apache2 libapache2-mod-php7.0
 # Add steps
 ADD install_Step10.sh / 
 
+ADD apache2.conf /etc/apache2/
+ADD nZEDb.conf /etc/apache2/sites-available/
 ADD install_Step11_nZEDb.sh / 
 RUN bash /install_Step11_nZEDb.sh 
 
@@ -33,8 +35,6 @@ ADD install_nZEDb.sh /
 ADD php-cli.ini /etc/php/7.0/cli/php.ini
 ADD php-web.ini /etc/php/7.0/apache2/php.ini
 ADD my.cnf /etc/mysql/
-ADD apache2.conf /etc/apache2/
-ADD nZEDb.conf /etc/apache2/sites-available/
 
 # Volumes
 #VOLUME /var/lib/unifi-video  
