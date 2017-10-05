@@ -10,5 +10,6 @@ echo " |_____|___|  _|___|_| |____/ "
 echo -e  "           |_|                "
 echo ""            
 
+service mysql start
 service apache2 start
 tail -F /install_nZEDb.sh
