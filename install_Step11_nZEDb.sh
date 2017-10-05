@@ -26,3 +26,9 @@ chmod 777 /var/www/nZEDb/www/install
 
 chmod 777 -R /var/lib/php/sessions
 
+# Enable nZEDb website 
+sudo a2dissite 000-default
+sudo a2ensite nZEDb.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
+
