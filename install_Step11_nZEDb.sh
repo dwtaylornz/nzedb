@@ -24,6 +24,9 @@ sudo chmod -R 777 /var/www/nZEDb/www
 chmod 777 /var/www/nZEDb/configuration/
 chmod 777 /var/www/nZEDb/www/install 
 
+# REMOVE 
+chmod -R 777 /var/www/nZEDb
+
 chmod 777 -R /var/lib/php/sessions
 
 # Enable nZEDb website 
