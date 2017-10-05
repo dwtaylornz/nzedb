@@ -20,3 +20,9 @@ sudo chmod -R 755 /var/www/nZEDb/app/libraries
 sudo chmod -R 755 /var/www/nZEDb/libraries
 sudo chmod -R 777 /var/www/nZEDb/resources
 sudo chmod -R 777 /var/www/nZEDb/www
+
+chmod 777 /var/www/nZEDb/configuration/
+chmod 777 /var/www/nZEDb/www/install 
+
+chmod 777 -R /var/lib/php/sessions
+
