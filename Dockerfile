@@ -8,11 +8,7 @@ RUN apt-get install -y software-properties-common python-software-properties git
 RUN add-apt-repository -y ppa:ondrej/php
 RUN apt-get update 
 RUN apt-get install -y --force-yes php-pear php-imagick php7.0 php7.0-cli php7.0-dev php7.0-common php7.0-curl php7.0-json php7.0-gd php7.0-mysql php7.0-mbstring php7.0-mcrypt php7.0-xml
-#export DEBIAN_FRONTEND="noninteractive"
-#sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password password $PASSWORD"
-#sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $PASSWORD"
 RUN apt-get install -y unrar wget p7zip-full
-# RUN apt-get install -y mariadb-server mariadb-client libmysqlclient-dev
 RUN apt-get install -y apache2 libapache2-mod-php7.0
 
 # Add steps
