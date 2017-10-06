@@ -24,14 +24,9 @@ RUN bash /install_Step11_nZEDb.sh
 ADD start_nZEDb.sh /
 RUN chmod +x /start_nZEDb.sh
 
-# Install nZEDb
-ADD install_nZEDb.sh /
-# RUN bash /install_nZEDb.sh
-
 # Add Files
 ADD php-cli.ini /etc/php/7.0/cli/php.ini
 ADD php-web.ini /etc/php/7.0/apache2/php.ini
-# ADD my.cnf /etc/mysql/
 
 # Volumes
 #VOLUME /var/lib/unifi-video  
