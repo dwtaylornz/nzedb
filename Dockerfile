@@ -11,6 +11,9 @@ RUN apt-get install -y --force-yes php-pear php-imagick php7.0 php7.0-cli php7.0
 RUN apt-get install -y unrar wget p7zip-full
 RUN apt-get install -y apache2 libapache2-mod-php7.0
 
+RUN apt-get purge apparmor 
+RUN update-rc.d apparmor disable
+
 # Add steps
 ADD install_Step10.sh / 
 RUN bash /install_Step10.sh
